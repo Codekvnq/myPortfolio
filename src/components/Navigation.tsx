@@ -7,7 +7,7 @@ export const Navigation = () => {
     <nav className="flex items-center justify-between p-6 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="flex items-center space-x-2">
         <TreePine className="h-8 w-8 text-primary" />
-        <span className="text-xl font-bold text-foreground">FamilyTree</span>
+        <span className="text-xl font-bold text-foreground">FamilyVerse</span>
       </div>
       
       <div className="hidden md:flex items-center space-x-6">

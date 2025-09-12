@@ -22,7 +22,7 @@ export default function Login() {
         <div className="flex items-center justify-center mb-8">
           <div className="flex items-center space-x-2">
             <TreePine className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold text-foreground">FamilyTree</span>
+            <span className="text-2xl font-bold text-foreground">FamilyVerse</span>
           </div>
         </div>
 
@@ -30,7 +30,7 @@ export default function Login() {
           <CardHeader className="space-y-1 text-center">
             <CardTitle className="text-2xl font-bold">Welcome back</CardTitle>
             <CardDescription>
-              Sign in to continue building your family heritage
+              Sign in to connect with families nationwide
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -71,6 +71,25 @@ export default function Login() {
                 Sign In
               </Button>
             </form>
+
+            {/* Social Login Options */}
+            <div className="relative mt-6">
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-4 mt-6">
+              <Button variant="outline" type="button">
+                Google
+              </Button>
+              <Button variant="outline" type="button">
+                Apple
+              </Button>
+            </div>
 
             <div className="mt-4 text-center">
               <Link 

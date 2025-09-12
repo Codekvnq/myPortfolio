@@ -11,11 +11,11 @@ export const HeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Discover Your
-                <span className="bg-gradient-hero bg-clip-text text-transparent"> Family Heritage</span>
+                Connect Your
+                <span className="bg-gradient-hero bg-clip-text text-transparent"> Family Nationwide</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Build, explore, and share your family tree with powerful tools designed to preserve your legacy for generations to come.
+                Discover relatives across the country, manage your family tree, and unlock premium insights about your bloodline connections with our comprehensive data collection platform.
               </p>
             </div>
 
@@ -35,19 +35,19 @@ export const HeroSection = () => {
                 <div className="p-2 rounded-lg bg-family-sage-light">
                   <Users className="h-5 w-5 text-family-sage" />
                 </div>
-                <span className="text-sm font-medium text-muted-foreground">Unlimited Members</span>
+                <span className="text-sm font-medium text-muted-foreground">Nationwide Connections</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="p-2 rounded-lg bg-trust-blue-light">
                   <Shield className="h-5 w-5 text-trust-blue" />
                 </div>
-                <span className="text-sm font-medium text-muted-foreground">Secure & Private</span>
+                <span className="text-sm font-medium text-muted-foreground">Premium Analytics</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="p-2 rounded-lg bg-heritage-brown-light">
                   <Search className="h-5 w-5 text-heritage-brown" />
                 </div>
-                <span className="text-sm font-medium text-muted-foreground">Smart Search</span>
+                <span className="text-sm font-medium text-muted-foreground">Smart Matching</span>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@ export const HeroSection = () => {
             <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-card border">
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium">1,247 families connected today</span>
+                <span className="text-sm font-medium">4,892 families connected nationwide</span>
               </div>
             </div>
           </div>
