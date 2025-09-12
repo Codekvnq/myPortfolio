@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -47,6 +48,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        heritage: {
+          brown: "hsl(var(--heritage-brown))",
+          "brown-light": "hsl(var(--heritage-brown-light))",
+        },
+        family: {
+          sage: "hsl(var(--family-sage))",
+          "sage-light": "hsl(var(--family-sage-light))",
+        },
+        trust: {
+          blue: "hsl(var(--trust-blue))",
+          "blue-light": "hsl(var(--trust-blue-light))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +70,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-card": "var(--gradient-card)",
+        "gradient-subtle": "var(--gradient-subtle)",
+      },
+      boxShadow: {
+        heritage: "var(--shadow-heritage)",
+        card: "var(--shadow-card)",
+        glow: "var(--shadow-glow)",
       },
       borderRadius: {
         lg: "var(--radius)",

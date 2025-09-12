@@ -2,95 +2,131 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Family Tree App Design System - Heritage & Trust Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Heritage color palette */
+    --background: 40 15% 98%;
+    --foreground: 27 15% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 20% 99%;
+    --card-foreground: 27 15% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 20% 99%;
+    --popover-foreground: 27 15% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Sage green primary - represents growth & family trees */
+    --primary: 145 25% 35%;
+    --primary-foreground: 40 15% 98%;
+    --primary-glow: 145 35% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm brown secondary - heritage & roots */
+    --secondary: 27 25% 85%;
+    --secondary-foreground: 27 25% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 40 12% 92%;
+    --muted-foreground: 27 8% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Heritage blue accent */
+    --accent: 210 20% 88%;
+    --accent-foreground: 210 25% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 40 15% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 40 12% 88%;
+    --input: 40 12% 88%;
+    --ring: 145 25% 35%;
+
+    /* Custom heritage tokens */
+    --heritage-brown: 27 35% 45%;
+    --heritage-brown-light: 27 25% 85%;
+    --family-sage: 145 25% 35%;
+    --family-sage-light: 145 20% 85%;
+    --trust-blue: 210 25% 45%;
+    --trust-blue-light: 210 20% 88%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(145 25% 35%), hsl(210 25% 45%));
+    --gradient-card: linear-gradient(145deg, hsl(40 20% 99%), hsl(40 15% 96%));
+    --gradient-subtle: linear-gradient(180deg, hsl(40 15% 98%), hsl(40 12% 95%));
+
+    /* Shadows */
+    --shadow-heritage: 0 4px 20px -4px hsl(27 25% 25% / 0.15);
+    --shadow-card: 0 2px 12px -2px hsl(27 15% 12% / 0.08);
+    --shadow-glow: 0 0 30px hsl(145 35% 65% / 0.3);
+    /* Transitions & animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 40 15% 98%;
+    --sidebar-foreground: 27 15% 35%;
+    --sidebar-primary: 145 25% 35%;
+    --sidebar-primary-foreground: 40 15% 98%;
+    --sidebar-accent: 40 12% 92%;
+    --sidebar-accent-foreground: 145 25% 35%;
+    --sidebar-border: 40 12% 88%;
+    --sidebar-ring: 145 25% 35%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 27 15% 8%;
+    --foreground: 40 15% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 27 15% 10%;
+    --card-foreground: 40 15% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 27 15% 10%;
+    --popover-foreground: 40 15% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 145 35% 65%;
+    --primary-foreground: 27 15% 8%;
+    --primary-glow: 145 45% 75%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 27 25% 15%;
+    --secondary-foreground: 40 15% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 27 12% 15%;
+    --muted-foreground: 40 8% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 210 20% 15%;
+    --accent-foreground: 210 25% 85%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 40 15% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 27 12% 18%;
+    --input: 27 12% 18%;
+    --ring: 145 35% 65%;
+
+    /* Dark theme heritage colors */
+    --heritage-brown: 27 45% 65%;
+    --heritage-brown-light: 27 25% 15%;
+    --family-sage: 145 35% 65%;
+    --family-sage-light: 145 20% 15%;
+    --trust-blue: 210 35% 65%;
+    --trust-blue-light: 210 20% 15%;
+
+    /* Dark gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(145 35% 65%), hsl(210 35% 65%));
+    --gradient-card: linear-gradient(145deg, hsl(27 15% 10%), hsl(27 12% 12%));
+    --gradient-subtle: linear-gradient(180deg, hsl(27 15% 8%), hsl(27 12% 10%));
+
+    /* Dark shadows */
+    --shadow-heritage: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 2px 12px -2px hsl(0 0% 0% / 0.2);
+    --shadow-glow: 0 0 30px hsl(145 45% 75% / 0.2);
+
+    --sidebar-background: 27 15% 6%;
+    --sidebar-foreground: 40 15% 85%;
+    --sidebar-primary: 145 35% 65%;
+    --sidebar-primary-foreground: 27 15% 8%;
+    --sidebar-accent: 27 12% 12%;
+    --sidebar-accent-foreground: 145 35% 65%;
+    --sidebar-border: 27 12% 15%;
+    --sidebar-ring: 145 35% 65%;
   }
 }
 
