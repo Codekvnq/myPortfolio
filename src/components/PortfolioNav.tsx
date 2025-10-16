@@ -45,10 +45,10 @@ export const PortfolioNav = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
             <button
               onClick={() => scrollToSection("home")}
-              className={`transition-colors ${
+              className={`transition-colors text-sm xl:text-base ${
                 activeSection === "home" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -56,7 +56,7 @@ export const PortfolioNav = () => {
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className={`transition-colors ${
+              className={`transition-colors text-sm xl:text-base ${
                 activeSection === "about" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -64,7 +64,7 @@ export const PortfolioNav = () => {
             </button>
             <button
               onClick={() => scrollToSection("skills")}
-              className={`transition-colors ${
+              className={`transition-colors text-sm xl:text-base ${
                 activeSection === "skills" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -72,7 +72,7 @@ export const PortfolioNav = () => {
             </button>
             <button
               onClick={() => scrollToSection("projects")}
-              className={`transition-colors ${
+              className={`transition-colors text-sm xl:text-base ${
                 activeSection === "projects" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -80,7 +80,7 @@ export const PortfolioNav = () => {
             </button>
             <button
               onClick={() => scrollToSection("experience")}
-              className={`transition-colors ${
+              className={`transition-colors text-sm xl:text-base ${
                 activeSection === "experience" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -88,20 +88,22 @@ export const PortfolioNav = () => {
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className={`transition-colors ${
+              className={`transition-colors text-sm xl:text-base ${
                 activeSection === "contact" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
               }`}
             >
               Contact
             </button>
-            <Button onClick={() => scrollToSection("contact")}>Get In Touch</Button>
+            <Button onClick={() => scrollToSection("contact")} size="sm" className="xl:h-10 xl:px-6">
+              Get In Touch
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -110,7 +112,7 @@ export const PortfolioNav = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
+          <div className="lg:hidden mt-4 pb-4 space-y-4">
             <button
               onClick={() => scrollToSection("home")}
               className={`block w-full text-left transition-colors py-2 ${
