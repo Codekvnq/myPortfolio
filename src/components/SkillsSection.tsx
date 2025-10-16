@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 
 export const SkillsSection = () => {
   const skillCategories = [
@@ -21,23 +22,39 @@ export const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-20 bg-background px-4 sm:px-6">
+      <div className="container mx-auto">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             Skills & Technologies
-          </h2>
-          <p className="text-xl text-muted-foreground text-center mb-12">
+          </motion.h2>
+          <motion.p 
+            className="text-lg sm:text-xl text-muted-foreground text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             A comprehensive toolkit for building modern web applications
-          </p>
+          </motion.p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {skillCategories.map((category, index) => (
-              <Card
+              <motion.div
                 key={category.title}
-                className="p-6 bg-gradient-card border-border hover:shadow-glow transition-all duration-300 animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
               >
+                <Card className="p-6 bg-gradient-card border-border hover:shadow-glow transition-all duration-300 h-full">
                 <h3 className="text-xl font-semibold mb-4 text-foreground">
                   {category.title}
                 </h3>
@@ -53,6 +70,7 @@ export const SkillsSection = () => {
                   ))}
                 </div>
               </Card>
+              </motion.div>
             ))}
           </div>
         </div>

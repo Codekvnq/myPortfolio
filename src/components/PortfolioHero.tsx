@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
+import { motion } from "framer-motion";
 
 export const PortfolioHero = () => {
   const scrollToSection = (id: string) => {
@@ -9,7 +10,7 @@ export const PortfolioHero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden pt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden pt-20 px-4 sm:px-6">
       {/* Animated Tech Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-tech-cyan/10 rounded-full blur-3xl animate-float" />
@@ -23,16 +24,21 @@ export const PortfolioHero = () => {
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8 animate-fade-in-up">
+          <motion.div 
+            className="space-y-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="space-y-4">
-              <p className="text-primary font-mono text-lg">Hi, my name is</p>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
+              <p className="text-primary font-mono text-sm sm:text-base lg:text-lg">Hi, my name is</p>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
                 Alex Johnson
               </h1>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-muted-foreground">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-muted-foreground">
                 I build things for the web
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-xl">
                 A passionate software developer and web designer specializing in creating exceptional digital experiences. 
                 I focus on building accessible, human-centered products.
               </p>
@@ -85,17 +91,22 @@ export const PortfolioHero = () => {
                 Resume
               </Button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Image */}
-          <div className="relative flex items-center justify-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <motion.div 
+            className="relative flex items-center justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <div className="relative">
               {/* Glowing rings */}
               <div className="absolute inset-0 -m-4 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 blur-2xl animate-pulse" />
               <div className="absolute inset-0 -m-8 rounded-full bg-gradient-to-r from-accent/10 to-primary/10 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
               
               {/* Profile Image */}
-              <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-primary/50 shadow-glow">
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/50 shadow-glow">
                 <img
                   src={profileImage}
                   alt="Alex Johnson - Software Developer"
@@ -111,7 +122,7 @@ export const PortfolioHero = () => {
                 <span className="text-sm font-medium">🎨 Designer</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

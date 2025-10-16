@@ -1,9 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { Code2, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const PortfolioNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "about", "skills", "projects", "experience", "contact"];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -25,32 +47,50 @@ export const PortfolioNav = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <button
+              onClick={() => scrollToSection("home")}
+              className={`transition-colors ${
+                activeSection === "home" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Home
+            </button>
+            <button
               onClick={() => scrollToSection("about")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className={`transition-colors ${
+                activeSection === "about" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("skills")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className={`transition-colors ${
+                activeSection === "skills" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               Skills
             </button>
             <button
               onClick={() => scrollToSection("projects")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className={`transition-colors ${
+                activeSection === "projects" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               Projects
             </button>
             <button
               onClick={() => scrollToSection("experience")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className={`transition-colors ${
+                activeSection === "experience" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               Experience
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className={`transition-colors ${
+                activeSection === "contact" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               Contact
             </button>
@@ -72,32 +112,50 @@ export const PortfolioNav = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-4">
             <button
+              onClick={() => scrollToSection("home")}
+              className={`block w-full text-left transition-colors py-2 ${
+                activeSection === "home" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Home
+            </button>
+            <button
               onClick={() => scrollToSection("about")}
-              className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors py-2"
+              className={`block w-full text-left transition-colors py-2 ${
+                activeSection === "about" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("skills")}
-              className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors py-2"
+              className={`block w-full text-left transition-colors py-2 ${
+                activeSection === "skills" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               Skills
             </button>
             <button
               onClick={() => scrollToSection("projects")}
-              className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors py-2"
+              className={`block w-full text-left transition-colors py-2 ${
+                activeSection === "projects" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               Projects
             </button>
             <button
               onClick={() => scrollToSection("experience")}
-              className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors py-2"
+              className={`block w-full text-left transition-colors py-2 ${
+                activeSection === "experience" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               Experience
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors py-2"
+              className={`block w-full text-left transition-colors py-2 ${
+                activeSection === "contact" ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               Contact
             </button>

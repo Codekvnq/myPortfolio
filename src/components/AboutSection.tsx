@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Code2, Palette, Zap, Users } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const AboutSection = () => {
   const features = [
@@ -26,25 +27,41 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-20 bg-gradient-subtle px-4 sm:px-6">
+      <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             About Me
-          </h2>
-          <p className="text-xl text-muted-foreground text-center mb-12 leading-relaxed">
+          </motion.h2>
+          <motion.p 
+            className="text-lg sm:text-xl text-muted-foreground text-center mb-12 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             I'm a software developer and web designer with a passion for creating beautiful, 
             functional, and user-centered digital experiences. With expertise in modern web 
             technologies and a keen eye for design, I bring ideas to life through code.
-          </p>
+          </motion.p>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6">
             {features.map((feature, index) => (
-              <Card
+              <motion.div
                 key={feature.title}
-                className="p-6 bg-gradient-card border-border hover:shadow-glow transition-all duration-300 hover:-translate-y-1 animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
               >
+                <Card className="p-6 bg-gradient-card border-border hover:shadow-glow transition-all duration-300 h-full">
                 <div className="flex items-start space-x-4">
                   <div className="p-3 rounded-lg bg-primary/10 text-primary">
                     <feature.icon className="h-6 w-6" />
@@ -57,6 +74,7 @@ export const AboutSection = () => {
                   </div>
                 </div>
               </Card>
+              </motion.div>
             ))}
           </div>
         </div>

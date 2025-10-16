@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -45,23 +46,39 @@ export const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-20 bg-gradient-subtle px-4 sm:px-6">
+      <div className="container mx-auto">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             Get In Touch
-          </h2>
-          <p className="text-xl text-muted-foreground text-center mb-12">
+          </motion.h2>
+          <motion.p 
+            className="text-lg sm:text-xl text-muted-foreground text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             Have a project in mind? Let's work together
-          </p>
+          </motion.p>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid sm:grid-cols-3 gap-6 mb-12">
             {contactInfo.map((info, index) => (
-              <Card
+              <motion.div
                 key={info.title}
-                className="p-6 bg-gradient-card border-border hover:shadow-glow transition-all duration-300 text-center animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
               >
+                <Card className="p-6 bg-gradient-card border-border hover:shadow-glow transition-all duration-300 text-center h-full">
                 <a
                   href={info.href}
                   className="flex flex-col items-center space-y-3 group"
@@ -77,10 +94,17 @@ export const ContactSection = () => {
                   </div>
                 </a>
               </Card>
+              </motion.div>
             ))}
           </div>
 
-          <Card className="p-8 bg-gradient-card border-border shadow-glow animate-fade-in-up">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <Card className="p-6 sm:p-8 bg-gradient-card border-border shadow-glow">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -137,6 +161,7 @@ export const ContactSection = () => {
               </Button>
             </form>
           </Card>
+          </motion.div>
         </div>
       </div>
     </section>

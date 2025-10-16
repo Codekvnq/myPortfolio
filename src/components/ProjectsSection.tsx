@@ -4,6 +4,7 @@ import { ExternalLink, Github } from "lucide-react";
 import project1 from "@/assets/project1.jpg";
 import project2 from "@/assets/project2.jpg";
 import project3 from "@/assets/project3.jpg";
+import { motion } from "framer-motion";
 
 export const ProjectsSection = () => {
   const projects = [
@@ -37,23 +38,39 @@ export const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-20 bg-gradient-subtle px-4 sm:px-6">
+      <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             Featured Projects
-          </h2>
-          <p className="text-xl text-muted-foreground text-center mb-12">
+          </motion.h2>
+          <motion.p 
+            className="text-lg sm:text-xl text-muted-foreground text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             Some of my recent work that I'm proud of
-          </p>
+          </motion.p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {projects.map((project, index) => (
-              <Card
+              <motion.div
                 key={project.title}
-                className="overflow-hidden bg-card border-border hover:shadow-glow transition-all duration-300 hover:-translate-y-2 animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -8 }}
               >
+                <Card className="overflow-hidden bg-card border-border hover:shadow-glow transition-all duration-300 h-full flex flex-col">
                 <div className="relative overflow-hidden group">
                   <img
                     src={project.image}
@@ -95,6 +112,7 @@ export const ProjectsSection = () => {
                   </div>
                 </div>
               </Card>
+              </motion.div>
             ))}
           </div>
         </div>

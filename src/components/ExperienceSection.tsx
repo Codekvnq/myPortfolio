@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Briefcase, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const ExperienceSection = () => {
   const experiences = [
@@ -42,23 +43,39 @@ export const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="experience" className="py-20 bg-background px-4 sm:px-6">
+      <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             Work Experience
-          </h2>
-          <p className="text-xl text-muted-foreground text-center mb-12">
+          </motion.h2>
+          <motion.p 
+            className="text-lg sm:text-xl text-muted-foreground text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             My professional journey in web development
-          </p>
+          </motion.p>
 
           <div className="space-y-6">
             {experiences.map((exp, index) => (
-              <Card
+              <motion.div
                 key={exp.company}
-                className="p-6 bg-gradient-card border-border hover:shadow-glow transition-all duration-300 animate-slide-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02 }}
               >
+                <Card className="p-6 bg-gradient-card border-border hover:shadow-glow transition-all duration-300">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                   <div className="flex items-start space-x-3 mb-2 md:mb-0">
                     <div className="p-2 rounded-lg bg-primary/10 text-primary mt-1">
@@ -96,6 +113,7 @@ export const ExperienceSection = () => {
                   </ul>
                 </div>
               </Card>
+              </motion.div>
             ))}
           </div>
         </div>
