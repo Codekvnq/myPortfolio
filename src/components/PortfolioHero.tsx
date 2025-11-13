@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
-import profileImage from "@/assets/profile.JPG";
+import profileImage from "./../assets/profile.png";
 import { motion } from "framer-motion";
 
 export const PortfolioHero = () => {
