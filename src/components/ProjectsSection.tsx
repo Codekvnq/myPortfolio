@@ -1,41 +1,42 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
-import project1 from "@/assets/project1.jpg";
-import project2 from "@/assets/project2.jpg";
-import project3 from "@/assets/project3.jpg";
+import project1 from "./../assets/project1.png";
+import project2 from "./../assets/project2.png";
+import project3 from "./../assets/project3.png";
 import { motion } from "framer-motion";
 
 export const ProjectsSection = () => {
   const projects = [
     {
-      title: "Analytics Dashboard",
+      title: "Business Monitoring and Sales Management System",
       description:
-        "A comprehensive analytics platform with real-time data visualization, custom reports, and team collaboration features.",
+        "A complete business intelligence tool that tracks sales, expenses, and performance in real time — featuring dashboards, reports, and team collaboration tools.",
       image: project1,
       tags: ["React", "TypeScript", "Chart.js", "Node.js"],
-      demo: "#",
-      github: "#",
+      demo: "https://branchsync1.netlify.app/",
+      github: "https://github.com/Codekvnq/ChikaFranciscaChidimma",
     },
     {
-      title: "E-Commerce Platform",
+      title: "Plant Organic Fertilizer Website",
       description:
-        "Modern online shopping experience with product filtering, cart management, and secure payment integration.",
+        "A clean, eco-friendly web platform showcasing organic fertilizers and sustainable farming solutions — with detailed product listings, educational resources, and an easy contact system.",
       image: project2,
-      tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
-      demo: "#",
-      github: "#",
+      tags: ["Next.js", "Tailwind", "Contentful", "SEO"],
+      demo: "https://toponeplus.netlify.app", 
+      github: "https://github.com/Codekvnq/top-one-plus", 
     },
     {
-      title: "Creative Portfolio",
+      title: "E.K Royals School Complex Website",
       description:
-        "A stunning portfolio website for artists and designers featuring image galleries and smooth animations.",
+        "An engaging and informative school website designed for students from Creche to JHS — featuring admission details, academic programs, news updates, and a user-friendly interface for parents and teachers.",
       image: project3,
-      tags: ["React", "Framer Motion", "CSS Grid", "Firebase"],
-      demo: "#",
-      github: "#",
+      tags: ["React", "Framer Motion", "Firebase", "Tailwind"],
+      demo: "https://ekroyalsschoolcomplex.netlify.app", 
+      github: "https://github.com/Codekvnq/ekroyals-school-website", 
     },
   ];
+
 
   return (
     <section id="projects" className="py-20 bg-gradient-subtle px-4 sm:px-6">

@@ -99,11 +99,9 @@ export const Footer = () => {
 
         <div className="text-center pt-8 border-t border-border">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} Alex Johnson. All rights reserved.
+            © {currentYear} Evans Ameyaw. All rights reserved.
           </p>
-          <p className="text-muted-foreground text-sm mt-2">
-            Built with React, TypeScript & Tailwind CSS
-          </p>
+
         </div>
       </div>
     </footer>
