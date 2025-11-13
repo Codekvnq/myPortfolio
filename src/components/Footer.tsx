@@ -60,7 +60,7 @@ export const Footer = () => {
             <div className="flex items-center gap-3 flex-wrap justify-center md:justify-start">
 
               <a
-                href="https://github.com"
+                href="https://github.com/Codekvnq"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors group"
@@ -69,7 +69,7 @@ export const Footer = () => {
                 <Github className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/evansameyaw"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors group"
@@ -78,7 +78,7 @@ export const Footer = () => {
                 <Linkedin className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/evansonkay?s=21"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors group"
@@ -87,7 +87,7 @@ export const Footer = () => {
                 <Twitter className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" />
               </a>
               <a
-                href="mailto:alex@example.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=evansameyaw704@gmail.com&su=Hello%20Evanson&body=Hi%20Evanson,%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect."
                 className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors group"
                 aria-label="Email"
               >
